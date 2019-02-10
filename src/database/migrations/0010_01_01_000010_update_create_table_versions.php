@@ -1,0 +1,41 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class UpdateCreateTableVersions extends Migration
+{
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		if (! Schema::hasTable('update_versions'))
+		{
+			Schema::create('update_versions', function (Blueprint $table) {
+				$table->engine = 'InnoDB';
+				
+				$table->increments('id');
+                $table->integer('package_id');
+				$table->string('version', 20);
+                $table->string('name');
+				$table->boolean('publish')->default(false);
+
+                $table->timestamps();
+                $table->softDeletes();
+			});
+		}
+	}
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+	    Schema::dropIfExists('update_versions');
+	}
+}
