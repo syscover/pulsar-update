@@ -1,0 +1,4 @@
+# Version
+updateCreateVersion(payload:UpdateVersionInput!): UpdateVersion @field(resolver: "Syscover\\Update\\GraphQL\\Services\\VersionGraphQLService@store")
+updateUpdateVersion(payload:UpdateVersionInput!): UpdateVersion @field(resolver: "Syscover\\Update\\GraphQL\\Services\\VersionGraphQLService@update")
+updateDeleteVersion(id:String!): UpdateVersion @field(resolver: "Syscover\\Update\\GraphQL\\Services\\VersionGraphQLService@delete")

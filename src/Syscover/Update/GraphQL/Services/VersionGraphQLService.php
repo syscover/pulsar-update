@@ -1,4 +1,4 @@
-<?php namespace Syscover\Admin\GraphQL\Services;
+<?php namespace Syscover\Update\GraphQL\Services;
 
 use Syscover\Update\Models\Version;
 use Syscover\Update\Services\VersionService;

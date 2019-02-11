@@ -1,0 +1,7 @@
+# Version
+""" Query to get versions list """
+updateVersions(sql:[CoreSQLInput]): [UpdateVersion!]! @field(resolver: "Syscover\\Update\\GraphQL\\Services\\VersionGraphQLService@get")
+""" Query to get version """
+updateVersion(sql:[CoreSQLInput]): UpdateVersion @field(resolver: "Syscover\\Update\\GraphQL\\Services\\VersionGraphQLService@find")
+""" Query to get versions paginated """
+updateVersionsPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Update\\GraphQL\\Services\\VersionGraphQLService@paginate")
