@@ -18,12 +18,18 @@ class UpdateCreateTableQueries extends Migration
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id');
-                $table->integer('version_id');
+                $table->integer('version_id')->unsigned();
 				$table->text('query');
-                $table->tinyInteger('sort');
+                $table->tinyInteger('sort')->unsigned();
 
                 $table->timestamps();
                 $table->softDeletes();
+
+                $table->foreign('version_id', 'fk01_update_queries')
+                    ->references('id')
+                    ->on('update_versions')
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
 			});
 		}
 	}

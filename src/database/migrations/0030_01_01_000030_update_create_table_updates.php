@@ -14,7 +14,7 @@ class UpdateCreateTableUpdates extends Migration
 	{
 		if (! Schema::hasTable('update_updates'))
 		{
-			Schema::create('update_queries', function (Blueprint $table) {
+			Schema::create('update_updates', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id');
