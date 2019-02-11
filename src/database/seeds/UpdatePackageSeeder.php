@@ -8,7 +8,7 @@ class UpdatePackageSeeder extends Seeder
     public function run()
     {
         Package::insert([
-            ['id' => 10, 'name' => 'Update Package', 'root' => 'update', 'sort' => 10, 'active' => true]
+            ['id' => 30, 'name' => 'Update Package', 'root' => 'update', 'sort' => 30, 'active' => true]
         ]);
     }
 }
