@@ -1,0 +1,8 @@
+type UpdateVersion {
+    id: Int!
+    package_id: Int!
+    package: AdminPackage!
+    version: String!
+    name: String!
+    publish: Boolean!
+}
