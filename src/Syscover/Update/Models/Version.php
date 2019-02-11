@@ -9,6 +9,6 @@ use Syscover\Core\Models\CoreModel;
 
 class Version extends CoreModel
 {
-	protected $table        = 'update_version';
+	protected $table        = 'update_versions';
     protected $fillable     = ['package_id', 'version','name'];
 }
