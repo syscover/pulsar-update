@@ -25,6 +25,12 @@ class UpdateCreateTableVersions extends Migration
 
                 $table->timestamps();
                 $table->softDeletes();
+
+                $table->foreign('package_id', 'fk01_update_versions')
+                    ->references('id')
+                    ->on('admin_package')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
 			});
 		}
 	}
