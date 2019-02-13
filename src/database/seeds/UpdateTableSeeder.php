@@ -10,6 +10,7 @@ class UpdateTableSeeder extends Seeder
         Model::unguard();
 
         $this->call(UpdatePackageSeeder::class);
+        $this->call(UpdateResourceTableSeeder::class);
 
         Model::reguard();
     }

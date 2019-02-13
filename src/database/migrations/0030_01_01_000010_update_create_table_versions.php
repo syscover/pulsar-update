@@ -18,9 +18,9 @@ class UpdateCreateTableVersions extends Migration
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id');
-                $table->integer('package_id')->unsigned();
-				$table->string('version', 20);
                 $table->string('name');
+                $table->integer('package_id')->unsigned();
+                $table->string('version', 20);
 				$table->boolean('publish')->default(false);
 
                 $table->timestamps();
