@@ -21,7 +21,10 @@ class UpdateCreateTableVersions extends Migration
                 $table->string('name');
                 $table->integer('package_id')->unsigned();
                 $table->string('version', 20);
-				$table->boolean('publish')->default(false);
+                $table->boolean('migration')->default(false);       // execute migration from migration_path
+                $table->boolean('config')->default(false);          // publish force config file
+                $table->text('query')->nullable();                        // execute query
+                $table->boolean('publish')->default(false);
 
                 $table->timestamps();
                 $table->softDeletes();

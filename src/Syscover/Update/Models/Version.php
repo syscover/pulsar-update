@@ -11,7 +11,7 @@ use Syscover\Core\Models\CoreModel;
 class Version extends CoreModel
 {
 	protected $table        = 'update_versions';
-    protected $fillable     = ['name', 'package_id', 'version', 'publish'];
+    protected $fillable     = ['name', 'package_id', 'version', 'migration', 'config', 'query', 'publish'];
     public $with            = ['package'];
 
     public function scopeBuilder($query)

@@ -4,5 +4,8 @@ type UpdateVersion {
     package: AdminPackage!
     version: String!
     name: String!
+    migration: Boolean!
+    config: Boolean!
+    query: String
     publish: Boolean!
 }

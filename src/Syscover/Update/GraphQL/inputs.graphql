@@ -3,5 +3,8 @@ input UpdateVersionInput {
     package_id: Int!
     version: String!
     name: String!
+    migration: Boolean!
+    config: Boolean!
+    query: String
     publish: Boolean!
 }

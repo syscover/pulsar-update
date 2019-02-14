@@ -11,8 +11,7 @@ class VersionService extends Service
         $this->validate($data, [
             'package_id'    => 'required|numeric|exists:admin_package,id',
             'version'       => 'required|max:20',
-            'name'          => 'required|between:2,255',
-            'publish'       => 'required'
+            'name'          => 'required|between:2,255'
         ]);
 
         return Version::create($data);
@@ -31,7 +30,7 @@ class VersionService extends Service
         $object->fill($data);
 
         // check is model
-        if ($object->isClean()) throw new ModelNotChangeException('At least one value must change');
+        if ($object->isClean()) throw new ModelNotChangeException();
 
         // save changes
         $object->save();
