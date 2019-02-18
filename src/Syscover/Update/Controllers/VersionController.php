@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Syscover\Core\Controllers\CoreController;
-use Syscover\Core\Services\VersionService;
+use Syscover\Update\Services\VersionService;
 use Syscover\Update\Models\Version;
 
 class VersionController extends CoreController
@@ -22,6 +22,9 @@ class VersionController extends CoreController
         $objects = $request->all();
 
 
+        info($objects);
+
+
 
 
 
@@ -33,6 +36,6 @@ class VersionController extends CoreController
 //            return $this->errorResponse('Does not exist any instance of ' . $model . ' with the given id', Response::HTTP_NOT_FOUND);
 //        }
 
-        return $this->successResponse(ActionService);
+        return $this->successResponse(true);
     }
 }
