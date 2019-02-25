@@ -11,12 +11,4 @@ class VersionGraphQLService extends CoreGraphQLService
         $this->model = $model;
         $this->service = $service;
     }
-
-    public function check($root, array $args)
-    {
-
-        info($args);
-
-        return true;
-    }
 }

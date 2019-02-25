@@ -7,5 +7,5 @@ type UpdateVersion {
     migration: Boolean!
     config: Boolean!
     query: String
-    publish: Boolean!
+    active: Boolean!
 }
