@@ -1,11 +1,11 @@
 type UpdateVersion {
     id: Int!
+    name: String!
     package_id: Int!
     package: AdminPackage!
     version: String!
-    name: String!
     migration: Boolean!
     config: Boolean!
     query: String
-    active: Boolean!
+    publish: Boolean!
 }
