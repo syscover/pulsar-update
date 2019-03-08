@@ -1,10 +1,13 @@
 input UpdateVersionInput {
     id: Int
+    name: String!
     package_id: Int!
     version: String!
-    name: String!
-    migration: Boolean!
-    config: Boolean!
-    query: String
+    minimal_panel_version: String
+    composer: Boolean!
     publish: Boolean!
+    migration: Boolean!
+    query: String
+    provide: Boolean!
+    provide_from: String
 }

@@ -1,5 +1,6 @@
 <?php namespace Syscover\Update\Models;
 
+use Carbon\Carbon;
 use Syscover\Admin\Models\Package;
 use Syscover\Core\Models\CoreModel;
 
@@ -11,7 +12,7 @@ use Syscover\Core\Models\CoreModel;
 class Version extends CoreModel
 {
 	protected $table        = 'update_version';
-    protected $fillable     = ['name', 'package_id', 'version', 'migration', 'config', 'query', 'publish'];
+    protected $fillable     = ['name', 'package_id', 'version', 'minimal_panel_version', 'composer', 'publish', 'migration', 'query', 'provide', 'provide_from'];
     public $with            = ['package'];
 
     public function scopeBuilder($query)
@@ -26,6 +27,14 @@ class Version extends CoreModel
                 'admin_package.version as admin_package_version',
                 'update_version.version as update_version_version'
             );
+    }
+
+    // Accessors
+    public function getProvideFromAttribute($value)
+    {
+        // https://es.wikipedia.org/wiki/ISO_8601
+        // return (new Carbon($value))->toW3cString();
+        return $value ? (new Carbon($value))->format('Y-m-d\TH:i:s') : null;
     }
 
     public function package()

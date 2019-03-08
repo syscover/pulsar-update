@@ -47,7 +47,9 @@ class VersionController extends CoreController
                                 CONCAT(LPAD(?,10,\'0\'), LPAD(?,10,\'0\'), LPAD(?,10,\'0\'))',
                             explode('.', $object['version'])
                         )
-                        ->where('update_version.version', '>', $object['version']);
+                        ->where('update_version.version', '>', $object['version'])
+                        ->where('update_version.provide', true)
+                        ->where('update_version.provide_from', '<', now()->toDateTimeString());
                 });
             }
 

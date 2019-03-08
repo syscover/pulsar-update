@@ -21,10 +21,13 @@ class UpdateCreateTableVersion extends Migration
                 $table->string('name');
                 $table->integer('package_id')->unsigned();
                 $table->string('version', 20);
-                $table->boolean('migration')->default(false);       // execute migration from migration_path
-                $table->boolean('config')->default(false);          // publish force config file
-                $table->text('query')->nullable();                        // execute query
-                $table->boolean('publish')->default(false);
+                $table->string('minimal_panel_version', 20)->nullable();               // minimal panel version to load this version
+                $table->boolean('composer')->default(false);                            // execute composer update command
+                $table->boolean('publish')->default(false);                             // execute publish force command
+                $table->boolean('migration')->default(false);                           // execute migration command
+                $table->text('query')->nullable();                                            // execute query command
+                $table->boolean('provide')->default(false);                             // flag to provide this version
+                $table->timestamp('provide_from')->default(DB::raw('CURRENT_TIMESTAMP'));     // date to provide this version
 
                 $table->timestamps();
                 $table->softDeletes();
