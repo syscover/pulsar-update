@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateCreateTableVersions extends Migration
+class UpdateCreateTableVersion extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -12,9 +12,9 @@ class UpdateCreateTableVersions extends Migration
 	 */
 	public function up()
 	{
-		if (! Schema::hasTable('update_versions'))
+		if (! Schema::hasTable('update_version'))
 		{
-			Schema::create('update_versions', function (Blueprint $table) {
+			Schema::create('update_version', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id');
@@ -29,7 +29,7 @@ class UpdateCreateTableVersions extends Migration
                 $table->timestamps();
                 $table->softDeletes();
 
-                $table->foreign('package_id', 'fk01_update_versions')
+                $table->foreign('package_id', 'fk01_update_version')
                     ->references('id')
                     ->on('admin_package')
                     ->onDelete('restrict')
@@ -45,6 +45,6 @@ class UpdateCreateTableVersions extends Migration
 	 */
 	public function down()
 	{
-	    Schema::dropIfExists('update_versions');
+	    Schema::dropIfExists('update_version');
 	}
 }

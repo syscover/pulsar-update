@@ -9,6 +9,6 @@ use Syscover\Core\Models\CoreModel;
 
 class Update extends CoreModel
 {
-	protected $table        = 'update_updates';
+	protected $table        = 'update_update';
     protected $fillable     = ['start_version', 'end_version', 'license'];
 }

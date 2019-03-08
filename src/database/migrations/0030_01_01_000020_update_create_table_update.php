@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateCreateTableUpdates extends Migration
+class UpdateCreateTableUpdate extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -12,9 +12,9 @@ class UpdateCreateTableUpdates extends Migration
 	 */
 	public function up()
 	{
-		if (! Schema::hasTable('update_updates'))
+		if (! Schema::hasTable('update_update'))
 		{
-			Schema::create('update_updates', function (Blueprint $table) {
+			Schema::create('update_update', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id');
@@ -35,6 +35,6 @@ class UpdateCreateTableUpdates extends Migration
 	 */
 	public function down()
 	{
-	    Schema::dropIfExists('update_updates');
+	    Schema::dropIfExists('update_update');
 	}
 }

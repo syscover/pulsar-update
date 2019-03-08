@@ -40,14 +40,14 @@ class VersionController extends CoreController
                         ->where('package_id', $object['package_id'])
                         ->whereRaw(
                             'CONCAT(
-                                LPAD(SUBSTRING_INDEX(SUBSTRING_INDEX(`version`, \'.\', 1), \'.\', -1), 10, \'0\'),
-                                LPAD(SUBSTRING_INDEX(SUBSTRING_INDEX(`version`, \'.\', 2), \'.\', -1), 10, \'0\'),
-                                LPAD(SUBSTRING_INDEX(SUBSTRING_INDEX(`version`, \'.\', 3), \'.\', -1), 10, \'0\')) 
-                                > 
+                                LPAD(SUBSTRING_INDEX(SUBSTRING_INDEX(\'update_version.version\', \'.\', 1), \'.\', -1), 10, \'0\'),
+                                LPAD(SUBSTRING_INDEX(SUBSTRING_INDEX(\'update_version.version\', \'.\', 2), \'.\', -1), 10, \'0\'),
+                                LPAD(SUBSTRING_INDEX(SUBSTRING_INDEX(\'update_version.version\', \'.\', 3), \'.\', -1), 10, \'0\'))
+                                >
                                 CONCAT(LPAD(?,10,\'0\'), LPAD(?,10,\'0\'), LPAD(?,10,\'0\'))',
                             explode('.', $object['version'])
                         )
-                        ->where('version', '>', $object['version']);
+                        ->where('update_version.version', '>', $object['version']);
                 });
             }
 
