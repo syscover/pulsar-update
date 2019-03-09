@@ -21,7 +21,7 @@ class UpdateCreateTableVersion extends Migration
                 $table->string('name');
                 $table->integer('package_id')->unsigned();
                 $table->string('version', 20);
-                $table->string('minimal_panel_version', 20)->nullable();               // minimal panel version to load this version
+                $table->string('minimal_panel_version', 20);                           // minimal panel version to load this version
                 $table->boolean('composer')->default(false);                            // execute composer update command
                 $table->boolean('publish')->default(false);                             // execute publish force command
                 $table->boolean('migration')->default(false);                           // execute migration command

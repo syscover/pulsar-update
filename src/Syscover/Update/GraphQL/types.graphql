@@ -4,7 +4,7 @@ type UpdateVersion {
     package_id: Int!
     package: AdminPackage!
     version: String!
-    minimal_panel_version: String
+    minimal_panel_version: String!
     composer: Boolean!
     publish: Boolean!
     migration: Boolean!
