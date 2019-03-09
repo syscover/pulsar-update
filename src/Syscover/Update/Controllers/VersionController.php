@@ -55,6 +55,18 @@ class VersionController extends CoreController
 
             // get all versions of current packages
             $versions = $q->get();
+
+            $versions = $versions->filter(function ($item) use ($objects){
+                if ($item->minimal_panel_version)
+                {
+                    return  version_compare($item->minimal_panel_version, $objects['panel_version']) === -1 ||
+                            version_compare($item->minimal_panel_version, $objects['panel_version']) === 0;
+                }
+                else
+                {
+                    return true;
+                }
+            });
         }
 
         return $this->successResponse($versions);
