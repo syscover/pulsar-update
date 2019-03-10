@@ -38,7 +38,7 @@ php artisan migrate --path=vendor/syscover/pulsar-update/src/database/migrations
 
 **5 - Add graphQL routes to graphql/schema.graphql file**
 ```
-# Update
+# Update types
 #import ./../vendor/syscover/pulsar-update/src/Syscover/Update/GraphQL/inputs.graphql
 #import ./../vendor/syscover/pulsar-update/src/Syscover/Update/GraphQL/types.graphql
 
