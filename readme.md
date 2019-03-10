@@ -36,15 +36,15 @@ php artisan db:seed --class="UpdateTableSeeder"
 php artisan migrate --path=vendor/syscover/pulsar-update/src/database/migrations/updates
 ```
 
-**5 - Add graphQL routes to routes/graphql/schema.graphql file**
+**5 - Add graphQL routes to graphql/schema.graphql file**
 ```
 # Update
-#import ./../../vendor/syscover/pulsar-update/src/Syscover/Update/GraphQL/inputs.graphql
-#import ./../../vendor/syscover/pulsar-update/src/Syscover/Update/GraphQL/types.graphql
+#import ./../vendor/syscover/pulsar-update/src/Syscover/Update/GraphQL/inputs.graphql
+#import ./../vendor/syscover/pulsar-update/src/Syscover/Update/GraphQL/types.graphql
 
 # Update
-#import ./../../vendor/syscover/pulsar-update/src/Syscover/Update/GraphQL/queries.graphql
+#import ./../vendor/syscover/pulsar-update/src/Syscover/Update/GraphQL/queries.graphql
 
 # Update
-#import ./../../vendor/syscover/pulsar-update/src/Syscover/Update/GraphQL/mutations.graphql
+#import ./../vendor/syscover/pulsar-update/src/Syscover/Update/GraphQL/mutations.graphql
 ```

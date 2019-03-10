@@ -1,4 +1,4 @@
-<?php namespace Syscover\Admin;
+<?php namespace Syscover\Update;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Console\Scheduling\Schedule;
